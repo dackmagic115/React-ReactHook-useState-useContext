@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React  from 'react';
 import './App.css';
+import Movieslish from './components/Movielist'
+import Nav from './components/Nav'
+import AddMovie from './components/AddMovie'
+import {MovieProvider} from './components/MovieContext'
 
-function App() {
+
+
+
+/////////////////// React Functional Component Basic useState useContext////////////
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MovieProvider>
+      <Nav/>
+      <div className="App">
+        <br/>
+        <AddMovie/>
+        <br/>
+        <Movieslish/>
+      </div>
+    </MovieProvider>
   );
 }
 
